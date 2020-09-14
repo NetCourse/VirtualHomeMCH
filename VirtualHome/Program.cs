@@ -10,7 +10,7 @@ namespace VirtualHome
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Proper Hello World!!");
+            Console.WriteLine("This should appear on dev branch.");
         }
     }
 }
