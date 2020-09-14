@@ -22,10 +22,29 @@ namespace VirtualHome
         {
             access = new List<Room>(home.GetRooms());
         }
+
+        public void AddAccessToRoom(Room room)
+        {
+            if (home.GetRooms().Any(x => x.Equals(room)))
+            {
+                if (access.Any(x => x.Equals(room)))
+                {
+                    Console.WriteLine("Access to {0} in {1} is already on the accessible rooms list.", room.GetRoomName(), home.GetHomeName());
+                }
+                else
+                {
+                    access.Add(room);
+                    Console.WriteLine("Access to {0} in {1}, has been granted.", room.GetRoomName(), home.GetHomeName());
+                }
+            }
+            else
+            {
+                Console.WriteLine("There is no {0} in {1}.", room.GetRoomName(), home.GetHomeName());
+            }
+        }
         public void AddAccessToRoom(string roomName)
         {
 
-            bool ist = access.Any(x => x.GetRoomName().Equals(roomName));
             if (home.GetRooms().Any(x => x.GetRoomName().Equals(roomName)))
             {
                 if (access.Any(x => x.GetRoomName().Equals(roomName)))
@@ -40,7 +59,7 @@ namespace VirtualHome
             }
             else
             {
-                Console.WriteLine("There is no {0} in {1}", roomName, home.GetHomeName());
+                Console.WriteLine("There is no {0} in {1}.", roomName, home.GetHomeName());
             }
             
         }
@@ -54,6 +73,14 @@ namespace VirtualHome
             else
             {
                Console.WriteLine("{0} in {1} was already not accessible.", roomName, home.GetHomeName());
+            }
+        }
+
+        public void RevokeAccess(Room room)
+        {
+            if (access.Any(x => x.GetRoomName().Equals(room)))
+            {
+                access.Remove(room);
             }
         }
 

@@ -10,7 +10,8 @@ namespace VirtualHome
     {
         private string roomName;
         private List<Device> deviceList;
-        enum RoomType
+        private RoomType roomType;
+        public enum RoomType
         {
             Attic,
             Loft,
@@ -25,18 +26,25 @@ namespace VirtualHome
             Garage,
             Cellar,
             Mancave,
-            Corridor
+            Hallway,
+            Office,
+            Toilet
         }
 
-        public Room(string roomName)
+        public Room(string roomName, RoomType roomType)
         {
             this.roomName = roomName;
+            this.roomType = roomType;
             this.deviceList = new List<Device>();
         }
 
         public string GetRoomName()
         {
             return this.roomName;
+        }
+        public List<Device> GetDeviceList()
+        {
+            return deviceList;
         }
 
     }

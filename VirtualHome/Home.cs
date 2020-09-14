@@ -17,6 +17,7 @@ namespace VirtualHome
         public Home(string homeName)
         {
             this.homeName = homeName;
+            guests = new List<Person>();
             rooms = new List<Room>();
         }
 
