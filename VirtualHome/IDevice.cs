@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace VirtualHome
 {
-    class Program
+    interface IDevice
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("This should appear on dev branch.");
-        }
     }
 }
