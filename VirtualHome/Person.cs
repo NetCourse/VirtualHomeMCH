@@ -9,11 +9,10 @@ namespace VirtualHome
     class Person
     {
         private string name;
-        private List<Room> access;
+        private Access access;
 
         public Person(string name)
         {
-            access = new List<Room>();
             this.name = name;
         }
         public string GetName()
@@ -24,25 +23,14 @@ namespace VirtualHome
         {
             this.name = name;
         }
-        public void AddAccess(string roomName)
+        public Access GetAccess()
         {
-
-         //   bool ist = access.Find(x => x.GetRoomName() == "res");
-
-            /*
-            if (access.IndexOf(roomName)== -1)
-            {
-                this.access.Add(roomName);
-            }
-            else
-            {
-                Console.WriteLine("Access to {0} has already been granted", roomName);
-            }
-            */
+            return access;
         }
-        public void RemoveAccess(string roomName)
+        public void SetAccess(Access access)
         {
-
+            this.access = access;
         }
+        
     }
 }

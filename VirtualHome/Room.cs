@@ -9,7 +9,7 @@ namespace VirtualHome
     class Room
     {
         private string roomName;
-        
+        private List<Device> deviceList;
         enum RoomType
         {
             Attic,
@@ -31,6 +31,7 @@ namespace VirtualHome
         public Room(string roomName)
         {
             this.roomName = roomName;
+            this.deviceList = new List<Device>();
         }
 
         public string GetRoomName()

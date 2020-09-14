@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace VirtualHome
 {
-    class Device
+    abstract class Device : IDevice
     {
+        private string name;
+        private int deviceID;
+        private bool isOn;
+        public void TurnOff()
+        {
+            this.isOn = false;
+        }
+
+        public void TurnOn()
+        {
+            this.isOn = true;
+        }
     }
 }

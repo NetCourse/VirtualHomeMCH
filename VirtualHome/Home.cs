@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace VirtualHome
 {
-   
+
     class Home
     {
         private List<Room> rooms;
         private List<Person> guests;
         private Person owner;
+        private string homeName;
 
-        public Home()
+        public Home(string homeName)
         {
+            this.homeName = homeName;
             rooms = new List<Room>();
         }
 
@@ -33,6 +35,14 @@ namespace VirtualHome
         public void SetOwner(Person person)
         {
             this.owner = person;
+        }
+        public string GetHomeName()
+        {
+            return homeName;
+        }
+        public void SetHomeName(string homeName)
+        {
+            this.homeName = homeName;
         }
 
     }
