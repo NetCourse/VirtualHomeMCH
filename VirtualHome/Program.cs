@@ -11,6 +11,7 @@ namespace VirtualHome
         static void Main(string[] args)
         {
             Console.Write("Test.");
+            Console.Write("test2.");
         }
     }
 }
