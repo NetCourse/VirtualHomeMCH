@@ -38,7 +38,6 @@ namespace VirtualHome
             Room bathroom = new Room("Bathroom",Room.RoomType.Bathroom);
 
             // Rooms addition
-
             myHome.GetRooms().Add(entrance);
             myHome.GetRooms().Add(livingroom);
             myHome.GetRooms().Add(kitchen);
