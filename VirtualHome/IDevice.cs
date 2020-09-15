@@ -10,5 +10,7 @@ namespace VirtualHome
     {
         void TurnOn();
         void TurnOff();
+
+        void AssignTo(Room room);
     }
 }

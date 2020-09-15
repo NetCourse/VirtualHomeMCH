@@ -9,7 +9,6 @@ namespace VirtualHome
     class Person
     {
         private string name;
-        private Access access;
 
         public Person(string name)
         {
@@ -22,14 +21,6 @@ namespace VirtualHome
         public void SetName(string name)
         {
             this.name = name;
-        }
-        public Access GetAccess()
-        {
-            return access;
-        }
-        public void SetAccess(Access access)
-        {
-            this.access = access;
         }
         
     }

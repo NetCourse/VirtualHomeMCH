@@ -8,20 +8,24 @@ namespace VirtualHome
 {
     abstract class Device : IDevice
     {
-        private string name;
-        private string deviceID;
-        private bool isOn;
+        public string name { get; private set; }
+        public Guid deviceID { get; }
+        public bool isOn { get; private set; }
+
+        public Room location { get; private set; }
+
 
         public Device(string name)
         {
             this.name = name;
-            this.deviceID = GenerateID();
+            this.deviceID = Guid.NewGuid();
         }
 
-        public string GenerateID()
+        public void AssignTo(Room room)
         {
-            return Guid.NewGuid().ToString("N");
+            location = room;
         }
+
         public void TurnOff()
         {
             this.isOn = false;
@@ -32,13 +36,5 @@ namespace VirtualHome
             this.isOn = true;
         }
 
-        public string GetName()
-        {
-            return name;
-        }
-        public string GetDeviceId()
-        {
-            return deviceID;
-        }
     }
 }

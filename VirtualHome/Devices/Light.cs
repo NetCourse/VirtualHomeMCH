@@ -25,5 +25,11 @@ namespace VirtualHome
         {
             this.color = color;
         }
+
+        public void SetColor(Color color)
+        {
+            this.color = color;
+            Console.WriteLine("Changed {0} from to {1}", name, color.ToString());
+        }
     }
 }

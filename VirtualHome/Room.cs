@@ -8,9 +8,10 @@ namespace VirtualHome
 {
     class Room
     {
-        private string roomName;
-        private List<Device> deviceList;
-        private RoomType roomType;
+        public string roomName { get; }
+        private RoomType roomType { get; }
+
+        static DeviceManager deviceManager = DeviceManager.GetInstance();
         public enum RoomType
         {
             Attic,
@@ -35,17 +36,13 @@ namespace VirtualHome
         {
             this.roomName = roomName;
             this.roomType = roomType;
-            this.deviceList = new List<Device>();
         }
-
-        public string GetRoomName()
+        public IEnumerable<Device> Devices()
         {
-            return this.roomName;
+            //ogarnąc xunit
+            //zwróc wyrażenie. Jesli puste to zwróc pustą kolekcje
+            var temp = deviceManager.devices.Where(device => device.location == this);
+            return temp;
         }
-        public List<Device> GetDeviceList()
-        {
-            return deviceList;
-        }
-
     }
 }
