@@ -20,6 +20,8 @@ namespace VirtualHome
             BuildHome.EquipAllRooms(home, "airconditioner");
 
             deviceManager.AssignDevice(home.FirstOrDefault(room => room.roomName.Equals("Office")), new Laptop("Private Laptop","Lenovo","T480"));
+
+          
         }
     }
 }
